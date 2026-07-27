@@ -14,7 +14,7 @@ import Image from "next/image";
 import Link from "next/link";
 import NavLinks from "./NavLinks";
 
-const MobileNavigation = ({ isMobile }: { isMobile: boolean }) => {
+const MobileNavigation = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>

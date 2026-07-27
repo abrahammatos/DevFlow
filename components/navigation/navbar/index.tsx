@@ -6,7 +6,7 @@ import MobileNavigation from "./MobileNavigation";
 
 const Navbar = () => {
   return (
-    <nav className="flex-between background-light900_dark200 shadow-light-300 fixed z-50 w-full gap-6 p-6 sm:px-12 dark:shadow-none">
+    <nav className="flex-between background-light900_dark200 shadow-light-300 fixed z-50 flex w-full gap-6 p-6 sm:px-12 dark:shadow-none">
       <Link href="/" className="flex items-center gap-1">
         <Image src="/images/site-logo.svg" alt="DevFlow logo" width={23} height={23} />
 
@@ -17,10 +17,9 @@ const Navbar = () => {
 
       <p>Global search</p>
 
-      <div className="flex-between gap-5">
+      <div className="flex-between flex gap-5">
         <Theme />
-
-        <MobileNavigation isMobile={true} />
+        <MobileNavigation />
       </div>
     </nav>
   );
