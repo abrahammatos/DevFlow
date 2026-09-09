@@ -141,6 +141,7 @@ const QuestionForm = () => {
                         remove
                         isButton
                         handleRemove={() => handleTagRemove(tag, field)}
+                        handleRemoveDoubleClick={() => handleTagRemove(tag, field)}
                       />
                     ))}
                   </div>

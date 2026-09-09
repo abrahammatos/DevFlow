@@ -13,14 +13,28 @@ interface Props {
   remove?: boolean;
   isButton?: boolean;
   handleRemove?: () => void;
+  handleRemoveDoubleClick: () => void;
 }
 
-const TagCard = ({ _id, name, questions, showCount, compact, handleRemove, isButton, remove }: Props) => {
+const TagCard = ({
+  _id,
+  name,
+  questions,
+  showCount,
+  compact,
+  handleRemove,
+  isButton,
+  remove,
+  handleRemoveDoubleClick,
+}: Props) => {
   const iconClass = getDeviconClassName(name);
 
   const Content = (
     <>
-      <Badge className="subtle-medium background-light800_dark300 text-light400_light500 flex flex-row gap-2 rounded-md border-none px-4 py-2 uppercase">
+      <Badge
+        className="subtle-medium background-light800_dark300 text-light400_light500 flex flex-row gap-2 rounded-md border-none px-4 py-2 uppercase"
+        onDoubleClick={handleRemoveDoubleClick}
+      >
         <div className="flex-center space-x-2">
           <i className={`${iconClass} text-sm`}></i>
           <span>{name}</span>
