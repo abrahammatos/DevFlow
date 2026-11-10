@@ -41,21 +41,21 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
       </head>
-      <SessionProvider session={session}>
-        <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col">
+        <SessionProvider session={session}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             {children}
+            <Toaster
+              toastOptions={{
+                classNames: {
+                  error: "!bg-red-600 !text-white !border-red-700",
+                  success: "!bg-green-600 !text-white !border-green-700",
+                },
+              }}
+            />
           </ThemeProvider>
-          <Toaster
-            toastOptions={{
-              classNames: {
-                error: "!bg-red-600 !text-white !border-red-700",
-                success: "!bg-green-600 !text-white !border-green-700",
-              },
-            }}
-          />
-        </body>
-      </SessionProvider>
+        </SessionProvider>
+      </body>
     </html>
   );
 };
