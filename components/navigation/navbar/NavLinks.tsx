@@ -8,14 +8,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
+const NavLinks = ({ isMobileNav = false, userId }: { isMobileNav?: boolean; userId?: string }) => {
   const pathname = usePathname();
-  const userId = "123"; // Replace with actual
 
   return (
     <>
       {sidebarLinks.map((item) => {
-        const route = typeof item.route === "function" ? item.route(userId) : item.route;
+        const route = typeof item.route === "function" ? item.route(userId ?? "") : item.route;
         const isActive = (pathname.includes(route) && route.length > 1) || pathname === route;
 
         const LinkComponent = (
